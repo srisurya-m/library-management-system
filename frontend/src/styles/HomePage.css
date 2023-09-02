@@ -1,0 +1,55 @@
+
+
+.height {
+    height: 100vh;
+  }
+  
+  .form {
+    position: relative;
+  }
+  
+  .form .fa-search {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #9ca3af;
+  }
+  
+  .form-input {
+    height: 55px;
+    text-indent: 33px;
+    border-radius: 10px;
+  }
+  
+  .form-input:focus {
+    box-shadow: none;
+    border-color: black;
+  }
+
+  .card:hover{
+    border-color: grey;
+  }
+
+  .App {
+    font-family: sans-serif;
+    font-weight: 800;
+    font-size: 80px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    background-image: url("../../public/images/background_image_1.jpg");
+    background-size:cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color:beige;
+  }
+  
+  
+  
+  
+  
+  
+  
