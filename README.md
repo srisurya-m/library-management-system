@@ -74,4 +74,4 @@ Welcome to the Library Management System (LMS) project! This MERN stack applicat
 2. Install dependencies using `npm install` in both the client and server directories.
 3. Run the application using `npm run dev` for concurrent frontend and backend development.
 
-Feel free to explore and enhance the functionality of the Library Management System. If you have any questions or feedback, please open an issue or reach out to us. Happy reading! 📚✨
+Feel free to explore and enhance the functionality of the Library Management System. If you have any questions or feedback, please open an issue or reach out !! 📚✨
