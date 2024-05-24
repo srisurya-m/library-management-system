@@ -12,13 +12,13 @@ const sendmail=(req,subject,text)=>{
     let config={
       service:"gmail",
       auth:{
-        user:"library365366@gmail.com",
-        pass:"prqfxtwsbbyyifru"
+        user:process.env.USER_EMAIL,
+        pass:process.env.USER_EMAIL_PASS
       }
     }
     let transporter=nodemailer.createTransport(config);
     let message={
-      from:"library365366@gmail.com",
+      from:process.env.USER_EMAIL,
       to:req.user.email,
       subject:subject,
       text:text.replace("${req.body.name}", req.body.name).replaceAll("[Book Title]",req.body.title).replace("[Author's Name]",req.body.author).replace("[Expected Arrival Date]",date),
@@ -32,13 +32,13 @@ const sendmailspecial=async (req,subject,text)=>{
     let config={
       service:"gmail",
       auth:{
-        user:"library365366@gmail.com",
-        pass:"prqfxtwsbbyyifru"
+        user:process.env.USER_EMAIL,
+        pass:process.env.USER_EMAIL_PASS
       }
     }
     let transporter=nodemailer.createTransport(config);
     let message={
-      from:"library365366@gmail.com",
+      from:process.env.USER_EMAIL,
       to:orderdetails.email,
       subject:subject,
       text:text.replace("${req.body.name}", orderdetails.name).replaceAll("[Book Title]",orderdetails.title).replace("[Author's Name]",orderdetails.author),

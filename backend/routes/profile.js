@@ -10,8 +10,8 @@ const sendmail=(req,subject,text)=>{
   let config={
     service:"gmail",
     auth:{
-      user:"library365366@gmail.com",
-      pass:"prqfxtwsbbyyifru"
+      user:process.env.USER_EMAIL,
+      pass:process.env.USER_EMAIL_PASS
     }
   }
   let transporter=nodemailer.createTransport(config);

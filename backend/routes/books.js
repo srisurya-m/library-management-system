@@ -13,13 +13,13 @@ const sendmail=async (req,subject,text,issuedate,returndate)=>{
   let config={
     service:"gmail",
     auth:{
-      user:"library365366@gmail.com",
-      pass:"prqfxtwsbbyyifru"
+      user:process.env.USER_EMAIL,
+      pass:process.env.USER_EMAIL_PASS
     }
   }
   let transporter=nodemailer.createTransport(config);
   let message={
-    from:"library365366@gmail.com",
+    from:process.env.USER_EMAIL,
     to: owneremail,
     subject:subject,
     text: text.replace("[User's Name]",issuedbookowner.user_id.name).replace("[Book Title]",issuedbook.title).replace("[Author's Name]",issuedbook.author).replace("[Book Genre]",issuedbook.genre).replace("[Issue Date]",issuedate).replace("[Return Date]",returndate)
@@ -35,13 +35,13 @@ const sendmailspecial=async (req,subject,text,currentdate,penalty)=>{
   let config={
     service:"gmail",
     auth:{
-      user:"library365366@gmail.com",
-      pass:"prqfxtwsbbyyifru"
+      user:process.env.USER_EMAIL,
+      pass:process.env.USER_EMAIL_PASS
     }
   }
   let transporter=nodemailer.createTransport(config);
   let message={
-    from:"library365366@gmail.com",
+    from:process.env.USER_EMAIL,
     to: owneremail,
     subject:subject,
     text: text.replace("[User's Name]",owner_returnbook.user_id.name).replaceAll("[Book Title]",returnbook.title).replaceAll("[Author's Name]",returnbook.author).replace("[Due Date]",returnbook.returndate).replace("[Late Return Date]",currentdate).replaceAll("[Penalty Amount]",penalty)
@@ -57,13 +57,13 @@ const sendmailspecial2=async (req,subject,text)=>{
   let config={
     service:"gmail",
     auth:{
-      user:"library365366@gmail.com",
-      pass:"prqfxtwsbbyyifru"
+      user:process.env.USER_EMAIL,
+      pass:process.env.USER_EMAIL_PASS
     }
   }
   let transporter=nodemailer.createTransport(config);
   let message={
-    from:"library365366@gmail.com",
+    from:process.env.USER_EMAIL,
     to: owneremail,
     subject:subject,
     text: text.replace("[Customer's Name]",owner_returnbook.user_id.name).replace("[Book Title]",returnbook.title).replace("[Author's Name]",returnbook.author)

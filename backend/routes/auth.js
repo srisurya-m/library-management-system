@@ -7,18 +7,18 @@ var jwt = require("jsonwebtoken");
 const nodemailer=require("nodemailer");
 const fetchuser = require("../middleware/fetchUser");
 
-const JWT_SECRET = "surya$inotebook$project##"; //this is a secret which u shouldn't share.
+const JWT_SECRET = process.env.JWT_SECRET; //this is a secret which u shouldn't share.
 const sendmail= async (req,subject,text)=>{
   let config={
     service:"gmail",
     auth:{
-      user:"library365366@gmail.com",
-      pass:"prqfxtwsbbyyifru"
+      user:process.env.USER_EMAIL,
+      pass:process.env.USER_EMAIL_PASS
     }
   }
   let transporter=nodemailer.createTransport(config);
   let message={
-    from:"library365366@gmail.com",
+    from:process.env.USER_EMAIL,
     to: req.body.email,
     subject: subject,
     text: text.replace("${req.body.name}", req.body.name)
